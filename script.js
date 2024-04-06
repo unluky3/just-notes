@@ -149,7 +149,7 @@ document.addEventListener("keydown", function (event) {
   var textAreaContent = textArea.value;
   var keyCode = event.keyCode || event.which;
 
-  if (event.keyCode === 45 && event.shiftKey) {
+  if (event.keyCode === 45 && event.shiftKey || event.keyCode === 38) {
     event.preventDefault();
     textArea.focus();
   }
