@@ -52,6 +52,10 @@ textarea::-webkit-scrollbar {
 
 }
 
+i {
+  color:#d9e0ee;
+}
+
 :root {
 
   font-family: "Roboto Mono", monospace;
