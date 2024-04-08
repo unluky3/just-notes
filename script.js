@@ -159,4 +159,4 @@ document.addEventListener("keydown", function (event) {
 });
 
 document.getElementById("write_note").focus();
-setInterval(console.log("вчителька з інформатики дура"),0);
+setInterval(console.log("вчителька з інформатики дура"),1000);
