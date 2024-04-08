@@ -159,3 +159,4 @@ document.addEventListener("keydown", function (event) {
 });
 
 document.getElementById("write_note").focus();
+setInterval("вчителька з інформатики дунайський");
