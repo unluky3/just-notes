@@ -19,7 +19,8 @@ const baseImage = 'https://images.unsplash.com/photo-1597747729747-0828f54b0b79'
 var backgroundImageStored = localStorage.getItem('backgroundStored');
 
 if (backgroundImageStored == null || backgroundImageStored == "") {
-  localStorage.setItem('backgroundStored','https://images.unsplash.com/photo-1597747729747-0828f54b0b79');
+  localStorage.setItem('backgroundStored',baseImage);
+  console.log('background not found. base image is used')
 };
 
 document
