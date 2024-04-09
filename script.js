@@ -10,21 +10,31 @@ document.getElementById("write_note").addEventListener("blur", function () {
   notesElement.style.opacity = "1"; // Display .notes again when #write_note loses focus
 });
 //^^^^^^opacity changer^^^^^^//
+
+//hi, i am not that good of a "developer"(if i can say it that way), so, i hope you give me some advise for this projeсt and js in general
+
+const root = document.querySelector(':root');
+
+const baseImage = 'https://images.unsplash.com/photo-1597747729747-0828f54b0b79';
+var backgroundImageStored = localStorage.getItem('backgroundStored');
+
+if (backgroundImageStored == null || backgroundImageStored == "") {
+  localStorage.setItem('backgroundStored','https://images.unsplash.com/photo-1597747729747-0828f54b0b79');
+};
+
 document
   .getElementById("backgroundInput")
   .addEventListener("input", function () {
+    console.log(backgroundImageStored);
     var backgroundImageURL = this.value;
+    console.log(backgroundImageStored);
     if (backgroundImageURL.trim() === "" || !isValidURL(backgroundImageURL)) {
-      document.documentElement.style.setProperty(
-        "--background-image",
-        'url("https://images.unsplash.com/photo-1597747729747-0828f54b0b79?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")'
-      );
+      localStorage.setItem('backgroundStored','https://images.unsplash.com/photo-1597747729747-0828f54b0b79');      
     } else {
-      document.documentElement.style.setProperty(
-        "--background-image",
-        'url("' + backgroundImageURL + '")'
-      );
-    }
+      localStorage.setItem('backgroundStored', backgroundImageURL); 
+    };
+    backgroundImageStored = localStorage.getItem('backgroundStored');
+    root.style.backgroundImage = `url(${backgroundImageStored})`; 
   });
 
 function isValidURL(url) {
@@ -142,7 +152,7 @@ document
     if (event.keyCode === 27) {
       document.getElementById("shiftFocus").focus();
     }
-  });
+  }); 
 
 document.addEventListener("keydown", function (event) {
   const textArea = document.getElementById("write_note");
@@ -159,4 +169,5 @@ document.addEventListener("keydown", function (event) {
 });
 
 document.getElementById("write_note").focus();
-setInterval(console.log("вчителька з інформатики дура"),1000);
+
+setInterval(console.log("вчителька з інформатики дурна"),1000);

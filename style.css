@@ -62,11 +62,9 @@ i {
 
   font-optical-sizing: auto;
 
-  font-weight: <weight>;
+  font-weight: <weight>; 
 
   font-style: normal;
-
-  background-image: var(--background-image);
 
   margin: 0px;
 
@@ -79,8 +77,6 @@ i {
   background-size: cover;
 
   background-position: center;
-
-  --background-image: url("https://images.unsplash.com/photo-1597747729747-0828f54b0b79?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 
 }
 
@@ -97,22 +93,16 @@ body {
   align-items: center;
 
   justify-content: center;
-
+  flex-direction: column;
   margin: 0px;
 
   padding: 0p;
-
-  width: 100%;
-
-  height: 100%;
 
   overflow-x: hidden;
 
 }
 
 .button_wraper {
-
-  height: 90%;
 
   position: fixed;
 
@@ -128,11 +118,17 @@ body {
 
 }
 
+@media (min-width:1071px) {
+  .button_wraper{
+    height: 90%;
+  }
+}
+
 .main_window {
 
-  margin: 0%;
+  margin-top: 5%;
 
-  padding: 0px;
+  padding: 0%;
 
   display: flex;
 
@@ -144,13 +140,13 @@ body {
 
   -webkit-backdrop-filter: blur(25px);
 
-          backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
 
   background-color: rgba(20, 20, 20, 0.35);
 
-  aspect-ratio: 2.86/1.25;
+  aspect-ratio: 2.5/1.35;
 
-  width: 95%;
+  width: 75%;
 
   flex-direction: column;
 
@@ -200,23 +196,11 @@ button {
 
 }
 
-#add {
-
-  margin-bottom: 50%;
-
-}
-
-#delete {
-
-}
-
 #write_note {
 
   overflow-x: hidden;
 
   overflow: hidden;
-
-  position: absolute;
 
   z-index: 10;
 
@@ -226,7 +210,7 @@ button {
 
   color: #aaa;
 
-  margin-top: 35%;
+  margin-top: 30%;
 
   aspect-ratio: 20/1;
 
@@ -256,9 +240,7 @@ button {
 
 }
 
-#write_note:focus,
-
-#focus {
+#write_note:focus{
 
   opacity: 1;
 
@@ -274,9 +256,9 @@ button {
 
   margin-top: 0%;
 
-  aspect-ratio: 2.5/1;
+  aspect-ratio: 2.25/1.25;
 
-  width: 80%;
+  width: 82.5%;
 
   background-color: rgba(10, 10, 10, 0.35);
 
@@ -350,15 +332,15 @@ button {
 
 #settings {
 
-  position: absolute;
-
-  margin: 0px;
-
   padding: 0px;
 
   display: flex;
 
+  flex-direction: column;
+
   border-radius: 50px;
+
+  justify-self: flex-end;
 
   align-items: center;
 
@@ -370,13 +352,13 @@ button {
 
   background-color: rgba(20, 20, 20, 0.35);
 
-  aspect-ratio: 3/1;
+  aspect-ratio: 5/1;
 
   width: 75%;
 
-  transform: translate(0%, 150%);
+  margin-top: 7.5%;
 
-  margin-bottom: 5%;
+  margin-bottom: 2.5%;
 
 }
 
@@ -388,11 +370,7 @@ button {
 
   overflow: hidden;
 
-  position: absolute;
-
   z-index: 10;
-
-  transform: translatey(200%);
 
   outline-style: none;
 
@@ -426,13 +404,13 @@ button {
 
   justify-content: space-evenly;
 
-  transform: translatey(-690%);
-
   background-color: rgba(10, 10, 10, 0.35);
 
   border-radius: 50px;
 
   width: 75%;
+
+  margin-bottom: 5%;
 
 }
 
@@ -463,20 +441,6 @@ button {
   z-index: -1000;
 
   pointer-events: none;
-
-}
-
-#biggerY {
-
-  opacity: 0;
-
-  position: absolute;
-
-  z-index: -1000;
-
-  pointer-events: none;
-
-  transform: translatey(2000%);
 
 }
 
@@ -514,4 +478,77 @@ button {
 
   color:#d9e0ee;
 
+}
+
+@media (max-width: 1070px) {
+  body{
+    display: flex;
+  }
+  .main_window{
+    width:90%;
+  }
+  #settings {
+    margin-top: 7.5%;
+    margin-bottom: 5%;
+  }
+}
+@media (max-width: 650px) {
+  .main_window{
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    width: 100%;
+    aspect-ratio: 1.5/1;
+    margin:0px;
+    margin-top: 0px;
+  }
+  #settings {
+    margin-top: 5%;
+    margin-bottom: 2.5%;
+  }
+  #write_note{
+    margin-top: 50%;
+  }
+  #write_note:focus{
+    aspect-ratio: 1.75/1;
+    width:75%;
+  }
+}
+@media (max-width: 450px) {
+  .button_wraper{
+    margin:0px;
+    margin-top: 175%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    aspect-ratio: 2/1;
+    width: 100%;
+  }
+  #delete{
+    aspect-ratio: 1;
+
+  }
+  #add{
+    aspect-ratio: 1;
+  }
+  .main_window{
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    width: 100%;
+    aspect-ratio: 1/2.25;
+    margin:0px;
+    margin-top: 0px;
+  }
+  #settings {
+    margin-top: 5%;
+    margin-bottom: 2.5%;
+  }
+  #write_note{
+    aspect-ratio: 20/1;
+    width:70%;
+    margin-top: 130%;
+  }
+  #write_note:focus{
+    aspect-ratio: 1/1.9;
+    width:75%;
+  }
 }
