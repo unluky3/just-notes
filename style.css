@@ -547,8 +547,21 @@ button {
     width:70%;
     margin-top: 130%;
   }
+  #write_note:hover{
+    width:72.5%;
+  }
   #write_note:focus{
     aspect-ratio: 1/1.9;
+    width:75%;
+    margin: 0%;
+    margin-bottom: 25%;
+  }
+  .notes{
+    width:100%;
+    margin-bottom: 100%;
+  }
+  .note{
+    margin-left: 12.5%;
     width:75%;
   }
 }
