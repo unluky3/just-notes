@@ -496,6 +496,26 @@ button {
     margin-bottom: 5%;
   }
 }
+@media (max-width : 1000px) {
+  #settings{
+    margin-top: 10%;
+  }
+}
+@media (max-width : 940px) {
+  #settings{
+    margin-top: 17%;
+  }
+}
+@media (max-width : 860px) {
+  #settings{
+    margin-top: 23%;
+  }
+}
+@media (max-width : 816px) {
+  #settings{
+    margin-top: 23%;
+  }
+}
 @media (max-width : 650px) {
   .note {
     word-wrap: break-word;
@@ -512,7 +532,7 @@ button {
     width: 60%;
   }
 }
-@media (max-width: 650px) {
+@media (max-width: 770px) {
   .button_wraper{
     height: 100%;
     justify-content: space-around;
@@ -527,7 +547,7 @@ button {
   }
   #settings {
     margin-top: 5%;
-    margin-bottom: 2.5%;
+    margin-bottom: 0px;
   }
   #write_note{
     margin-top: 50%;
@@ -570,8 +590,8 @@ button {
     margin-top: 0px;
   }
   #settings {
-    margin-top: 15%;
-    margin-bottom: 2.5%;
+    margin-top: 20%;
+    margin-bottom: 0px;
     height: 8.5%;
     width: 100%;
     border-bottom-left-radius: 0px;
@@ -648,7 +668,7 @@ button {
   }
   #settings {
     margin-top: 15%;
-    margin-bottom: 2.5%;
+    margin-bottom: 0px;
     height: 8.5%;
     width: 100%;
     border-bottom-left-radius: 0px;
