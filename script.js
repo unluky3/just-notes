@@ -26,9 +26,7 @@ if (backgroundImageStored == null || backgroundImageStored == "") {
 document
   .getElementById("backgroundInput")
   .addEventListener("input", function () {
-    console.log(backgroundImageStored);
     var backgroundImageURL = this.value;
-    console.log(backgroundImageStored);
     if (backgroundImageURL.trim() === "" || !isValidURL(backgroundImageURL)) {
       localStorage.setItem('backgroundStored','https://images.unsplash.com/photo-1597747729747-0828f54b0b79');      
     } else {
@@ -168,7 +166,21 @@ document.addEventListener("keydown", function (event) {
     delete_note();
   }
 });
+document
+  .getElementById("backgroundInput")
+  .addEventListener("keypress", function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault(); // Prevent the default action of pressing ENTER
+    }
+});
 
 document.getElementById("write_note").focus();
+
+const onLoad = () => {
+  if (backgroundImageStored != baseImage) {
+   document.getElementById("backgroundInput").value = backgroundImageStored;
+  };
+  root.style.backgroundImage = `url(${backgroundImageStored})`;
+}
 
 setInterval(console.log("вчителька з інформатики дурна"),1000);

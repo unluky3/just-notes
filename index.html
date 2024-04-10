@@ -7,7 +7,7 @@
   <link rel="icon" type="image/gif" href="./favicon.gif">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body onload="root.style.backgroundImage = `url(${backgroundImageStored})`;">
+<body onload="onLoad()">
 <!-- partial:index.partial.html -->
 <div class="main_window">
   <div class="notes">
@@ -36,7 +36,7 @@ for _ in range(iterations):
 [$ user1] > sudo rm -rf /
 [# root ] > password: **********
 [# root ] > deleting /             01:34 [ ========================================> ] 100%"></textarea>-->
-  <textarea id="write_note" placeholder="type something"></textarea>
+  <textarea id="write_note" placeholder="type something..."></textarea>
   <div class="button_wraper">
     <button id="add" onclick="add_note()">
       <i class="fa-solid fa-plus"></i>
@@ -52,8 +52,26 @@ for _ in range(iterations):
       <i class="fa-brands fa-github"></i>
     </a>
   </div>
+  <!--<div class="toggles">
+    <div class="toggle">
+      <input type="checkbox" id="toggleText" /><label for="toggleText"></label>
+      <p></p>
+    </div>
+    <div class="toggle">
+      <input type="checkbox" id="toggleBlur" /><label for="toggleBlur"></label>
+      <p></p>
+    </div>
+    <div class="toggle">
+      <input type="checkbox" id="toggle1" /><label for="toggle1"></label>
+      <p></p>
+    </div>
+    <div class="toggle">
+      <input type="checkbox" id="toggle2" /><label for="toggle2"></label>
+      <p></p>
+    </div>
+  </div>
   <!--<input placeholder="https://www.background-image.url/paste/here/index.html" id="backgroundInput" autocomplete="off">-->
-  <input placeholder="paste an background image URL" id="backgroundInput" autocomplete="off">
+  <textarea placeholder="paste an background image URL" id="backgroundInput" autocomplete="off"></textarea>
 </div>
 <textarea id="shiftFocus"></textarea>
 <!-- partial -->
