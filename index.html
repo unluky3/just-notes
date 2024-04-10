@@ -12,7 +12,7 @@
 <div class="main_window">
   <div class="notes">
   </div>
-  <textarea id="write_note" placeholder="def typing(some-data, don't-read-pls):
+  <!--<textarea id="write_note" placeholder="def typing(some-data, don't-read-pls):
   Simulate text.
   
   This function simulates text,
@@ -28,14 +28,15 @@ for _ in range(iterations):
         print(char, end='', flush=True)
         time.sleep(0.05)
     print()
-{ log --> _______________________________________________________________________________ }
+{ log -> _______________________________________________________________________________ }
     
 [$ user1] > Cras blandit eget augue ut iaculis.
 [$ user1] > Maecenas luctus libero sit amet lectus aliquet consequat.
 [$ user1] > Suspendisse vulputate ex lobortis, gravida diam.
 [$ user1] > sudo rm -rf /
 [# root ] > password: **********
-[# root ] > deleting /             01:34 [ ========================================> ] 100%"></textarea>
+[# root ] > deleting /             01:34 [ ========================================> ] 100%"></textarea>-->
+  <textarea id="write_note" placeholder="type something></textarea>
   <div class="button_wraper">
     <button id="add" onclick="add_note()">
       <i class="fa-solid fa-plus"></i>
@@ -51,7 +52,8 @@ for _ in range(iterations):
       <i class="fa-brands fa-github"></i>
     </a>
   </div>
-  <input placeholder="https://www.background-image.url/paste/here/index.html" id="backgroundInput" autocomplete="off">
+  <!--<input placeholder="https://www.background-image.url/paste/here/index.html" id="backgroundInput" autocomplete="off">-->
+  <input placeholder="paste an background image URL" id="backgroundInput" autocomplete="off">
 </div>
 <textarea id="shiftFocus"></textarea>
 <!-- partial -->
