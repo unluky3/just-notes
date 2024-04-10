@@ -481,6 +481,10 @@ button {
 }
 
 @media (max-width: 1070px) {
+  .button_wraper{
+    justify-content: space-around;
+    height:100%;
+  }
   body{
     display: flex;
   }
@@ -493,6 +497,10 @@ button {
   }
 }
 @media (max-width: 650px) {
+  .button_wraper{
+    height: 100%;
+    justify-content: space-around;
+  }
   .main_window{
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
@@ -513,7 +521,89 @@ button {
     width:75%;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 425px) {
+  :root{
+    background-size: 200%;
+  }
+
+  .button_wraper{
+    margin:0px;
+    margin-top: 130%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    aspect-ratio: 2/1;
+    width: 100%;
+  }
+  #delete{
+    font-size:xx-large;
+    aspect-ratio: 1;
+    scale:0.6;
+  }
+  #add{
+    font-size:xx-large;
+    aspect-ratio: 1;
+    scale:0.6;
+  }
+  .main_window{
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    width: 100%;
+    aspect-ratio: 1/1.5;
+    margin:0px;
+    margin-top: 0px;
+  }
+  #settings {
+    margin-top: 15%;
+    margin-bottom: 2.5%;
+    height: 8.5%;
+    width: 100%;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .links{
+    margin-top: 2.5%;
+    width:70%;
+  }
+  .links > .link{
+    scale: 1.5;
+  }
+  .links > .link:hover{
+    scale:1.7;
+  }
+  #settings > input{
+    aspect-ratio: none;
+    height: 5%;
+    margin-bottom: 2.5%;
+  }
+  #write_note{
+    aspect-ratio: 20/1;
+    width:70%;
+    margin-top: 100%;
+  }
+  #write_note:hover{
+    width:72.5%;
+  }
+  #write_note:focus{
+    aspect-ratio: 1/1.5;
+    width:75%;
+    margin: 0%;
+    margin-top: 5%;
+    margin-bottom: 19%;
+  }
+  .notes{
+    width:100%;
+    margin-bottom: 40%;
+  }
+  .note{
+    margin-left: 12.5%;
+    width:70%;
+  }
+}
+@media (max-width: 320px) {
+  :root{
+    background-size: 300%;
+  }
   .button_wraper{
     margin:0px;
     margin-top: 175%;
@@ -524,22 +614,44 @@ button {
     width: 100%;
   }
   #delete{
+    font-size:xx-large;
     aspect-ratio: 1;
-
+    scale:0.6;
   }
   #add{
+    font-size:xx-large;
     aspect-ratio: 1;
+    scale:0.6;
   }
   .main_window{
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     width: 100%;
-    aspect-ratio: 1/2.25;
+    aspect-ratio: 1/2;
     margin:0px;
     margin-top: 0px;
   }
   #settings {
-    margin-top: 5%;
+    margin-top: 15%;
+    margin-bottom: 2.5%;
+    height: 8.5%;
+    width: 100%;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .links{
+    margin-top: 2.5%;
+    width:50%;
+  }
+  .links > .link{
+    scale: 1.5;
+  }
+  .links > .link:hover{
+    scale:1.7;
+  }
+  #settings > input{
+    aspect-ratio: none;
+    height: 5%;
     margin-bottom: 2.5%;
   }
   #write_note{
