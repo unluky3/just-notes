@@ -9,7 +9,7 @@ document.getElementById("write_note").addEventListener("blur", function () {
   notesElement.style.transition = "opacity 0.4s"; // Apply transition property
   notesElement.style.opacity = "1"; // Display .notes again when #write_note loses focus
 });
-//^^^^^^opacity changer^^^^^^//
+// ^^^^^^ opacity changer ^^^^^^ //
 
 //hi, i am not that good of a "developer"(if i can say it that way), so, i hope you give me some advise for this projeсt and js in general
 
@@ -20,8 +20,10 @@ var backgroundImageStored = localStorage.getItem('backgroundStored');
 
 if (backgroundImageStored == null || backgroundImageStored == "") {
   localStorage.setItem('backgroundStored',baseImage);
-  console.log('background not found. base image is used')
+  console.log('background not found. base image is used');
 };
+
+// ^^^^^^ save background image in local storage ^^^^^^ //
 
 document
   .getElementById("backgroundInput")
@@ -49,7 +51,7 @@ function isValidURL(url) {
   ); // fragment locator
   return !!pattern.test(url);
 }
-//^^^^^^background changer^^^^^^//
+// ^^^^^^ background changer ^^^^^^ //
 
 //  !\/!\/!\/ add or remove notes \/!\/!\/!  \\
 

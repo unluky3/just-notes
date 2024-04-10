@@ -1,485 +1,251 @@
 body::-webkit-scrollbar {
-
   display: none;
-
 }
-
 ::-moz-placeholder {
-
   color: #aaaaaa8a;
-
 }
-
 :-ms-input-placeholder {
-
   color: #aaaaaa8a;
-
 }
-
 ::placeholder {
-
   color: #aaaaaa8a;
-
 }
-
 .notes::-webkit-scrollbar {
-
   width: 8px;
-
   background-color: transparent;
-
   opacity: 1;
-
 }
-
 .notes::-webkit-scrollbar-track {
-
   background-color: transparent;
-
 }
-
 .notes::-webkit-scrollbar-thumb {
-
   background-color: rgba(50, 50, 50, 0.5);
-
   border-radius: 5px;
-
 }
-
 textarea::-webkit-scrollbar {
-
   display: none;
-
 }
-
 i {
   color:#d9e0ee;
 }
-
 :root {
-
   font-family: "Roboto Mono", monospace;
-
   font-optical-sizing: auto;
-
-  font-weight: <weight>; 
-
   font-style: normal;
-
   margin: 0px;
-
   padding: 0px;
-
   width: 100%;
-
   height: 100%;
-
   background-size: cover;
-
   background-position: center;
-
 }
-
 textarea {
-
   resize: none;
-
 }
-
 body {
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
   flex-direction: column;
   margin: 0px;
-
   padding: 0p;
-
   overflow-x: hidden;
-
 }
-
 .button_wraper {
-
   position: fixed;
-
   align-self: flex-end;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: space-around;
-
   margin-right: 5%;
-
 }
-
 @media (min-width:1071px) {
   .button_wraper{
     height: 90%;
   }
 }
-
 .main_window {
-
   margin-top: 5%;
-
   padding: 0%;
-
   display: flex;
-
   border-radius: 50px;
-
   align-items: center;
-
   justify-content: center;
-
   -webkit-backdrop-filter: blur(25px);
-
   backdrop-filter: blur(25px);
-
   background-color: rgba(20, 20, 20, 0.35);
-
   aspect-ratio: 2.5/1.35;
-
   width: 75%;
-
   flex-direction: column;
-
 }
-
 button {
-
   border-radius: 0%;
-
   aspect-ratio: 1;
-
   scale: 1;
-
   border-style: none;
-
   transition: 0.2s;
-
   background-color: transparent;
-
 }
-
 .button_wraper > button {
-
   border-radius: 50%;
-
   aspect-ratio: 1;
-
   scale: 2;
-
   border-style: none;
-
   transition: 0.2s;
-
   background-color: transparent;
-
 }
-
 .button_wraper > button:hover {
-
   scale: 2.5;
-
 }
-
 .button_wraper > button:active {
-
   scale: 1.9;
-
 }
-
 #write_note {
-
   overflow-x: hidden;
-
   overflow: hidden;
-
   z-index: 10;
-
   outline-style: none;
-
   font-size: 10px;
-
   color: #aaa;
-
   margin-top: 40%;
-
   aspect-ratio: 20/1;
-
   background-color: rgba(10, 10, 10, 0.35);
-
   border-radius: 50px;
-
   border-color: none;
-
   border-style: none;
-
   padding: 15px;
-
   width: 33%;
-
   transition-duration: 0.4s;
-
   transition-delay: 0.1s;
-
 }
-
 #write_note:hover {
-
   aspect-ratio: 7.5/1;
-
   width: 35%;
-
 }
-
 #write_note:focus{
-
   opacity: 1;
-
   padding: 25px;
-
   margin-right: 8.5%;
-
   border-color: transparent;
-
   color: #e0dfd5;
-
   font-size: 100%;
-
   margin-top: 0%;
-
   aspect-ratio: 2.25/1.25;
-
   width: 82.5%;
-
   background-color: rgba(10, 10, 10, 0.35);
-
   overflow: scroll;
-
   --opacity: 0;
-
   transition-delay: none;
-
 }
-
 .note {
-
   word-wrap: break-word;
-
   font-size: 100%;
-
   margin-bottom: 1%;
-
   color: #e0dfd5;
-
   background-color: rgba(10, 10, 10, 0.35);
-
   border-radius: 25px;
-
   border-color: none;
-
   border-style: none;
-
   padding: 25px;
-
   transition-duration: 0.5s;
-
   height: auto;
-
   width: 90%;
-
 }
-
 .notes {
-
   background-color: rgba(255, 255, 255, 0);
-
   position: absolute;
-
   margin-top: -7%;
-
   margin-left: -7.5%;
-
   width: 80%;
-
   height: 75%;
-
   padding-left: 5%;
-
   z-index: 1;
-
   display: flex;
-
   flex-flow: column-reverse;
-
   justify-content: flex-start;
   align-items: center;
   overflow-y: scroll;
-
   overflow-x: hidden;
-
   transition: opacity 0.4s; /* Add transition for opacity */
-
 }
-
 #settings {
-
   padding: 0px;
   padding-top: 2.5%;
   padding-bottom: 2.5%;
-
   display: flex;
-
   flex-direction: column;
-
   border-radius: 50px;
-
   justify-self: flex-end;
-
   align-items: center;
-
   justify-content: center;
-
   -webkit-backdrop-filter: blur(25px);
-
           backdrop-filter: blur(25px);
-
   background-color: rgba(20, 20, 20, 0.35);
-
   aspect-ratio: 5/1;
-
   width: 75%;
-
   margin-top: 7.5%;
-
   margin-bottom: 2.5%;
-
 }
-
 #settings > textarea {
-
   font-family: "Roboto Mono", monospace;
-
   overflow-x: hidden;
-
   overflow: hidden;
-
   z-index: 10;
-
   outline-style: none;
-
   font-size: 15px;
-
   color: #e0dfd5;
-
   margin-top: 0px;
-
   aspect-ratio: 35/1;
-
   background-color: rgba(10, 10, 10, 0.35);
-
   border-radius: 50px;
-
   border-color: none;
-
   border-style: none;
-
   padding: 15px;
-
   width: 75%;
-
 }
-
 .links {
-
   display: flex;
-
   flex-direction: row;
-
   justify-content: space-evenly;
-
   background-color: rgba(10, 10, 10, 0.35);
-
   border-radius: 50px;
-
   width: 75%;
-
   margin-bottom: 5%;
-
 }
-
 .links > .link {
-
   transition-duration: 0.25s;
-
   scale: 1.75;
-
   color: #d9e0ee;
-
   text-decoration: none;
-
 }
-
 .links > .link:hover {
-
   scale: 2;
-
 }
-
 #shiftFocus {
-
   opacity: 0;
-
   position: absolute;
-
   z-index: -1000;
-
   pointer-events: none;
-
 }
-
 .note_buttons_edit{
-
   color:#d9e0ee8a;
-
   scale:1.55;
-
   position:absolute;
-
   transform:translate(-145%,-15%)
-
 }
-
 .note_buttons_delete{
-
   color:#d9e0ee8a;
-
   scale:1.55;
-
   position:absolute;
-
   transform:translate(-155%,-165%)
-
 }
 
 .note_buttons_edit:hover{
-
   color:#d9e0ee;
-
 }
 
 .note_buttons_delete:hover{
-
   color:#d9e0ee;
-
 }
 .toggles{
   display: flex;
