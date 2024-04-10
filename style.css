@@ -210,7 +210,7 @@ button {
 
   color: #aaa;
 
-  margin-top: 30%;
+  margin-top: 40%;
 
   aspect-ratio: 20/1;
 
@@ -321,7 +321,7 @@ button {
   flex-flow: column-reverse;
 
   justify-content: flex-start;
-
+  align-items: center;
   overflow-y: scroll;
 
   overflow-x: hidden;
@@ -496,6 +496,22 @@ button {
     margin-bottom: 5%;
   }
 }
+@media (max-width : 650px) {
+  .note {
+    word-wrap: break-word;
+    font-size: 100%;
+    margin-bottom: 1%;
+    color: #e0dfd5;
+    background-color: rgba(10, 10, 10, 0.35);
+    border-radius: 25px;
+    border-color: none;
+    border-style: none;
+    padding: 25px;
+    transition-duration: 0.5s;
+    height: auto;
+    width: 60%;
+  }
+}
 @media (max-width: 650px) {
   .button_wraper{
     height: 100%;
@@ -532,8 +548,8 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    aspect-ratio: 2/1;
-    width: 100%;
+    width: -webkit-fill-available;
+    height: auto;
   }
   #delete{
     font-size:xx-large;
@@ -611,7 +627,6 @@ button {
     flex-direction: row;
     justify-content: space-around;
     aspect-ratio: 2/1;
-    width: 100%;
   }
   #delete{
     font-size:xx-large;
