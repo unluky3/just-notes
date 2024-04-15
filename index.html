@@ -5,11 +5,38 @@
   <title>just-notes</title>
   <script src="https://kit.fontawesome.com/d77fdc0de0.js" crossorigin="anonymous"></script><link rel="stylesheet" href="./style.css">
   <link rel="icon" type="image/gif" href="./favicon.gif">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body onload="onLoad()">
 <!-- partial:index.partial.html -->
 <div class="main_window">
+  <div class="notes">
+  </div>
+  <!--<textarea id="write_note" placeholder="def typing(some-data, don't-read-pls):
+  Simulate text.
+  
+  This function simulates text,
+  why do you read this?
+  
+  :param data: Lorem ipsum dolor sit amet.
+  :type data: why do you read this, just type you're notes
+  :param iterations: Aenean euismod eu est eget.
+    :type iterations: int
+import time
+for _ in range(iterations):
+    for char in data:
+        print(char, end='', flush=True)
+        time.sleep(0.05)
+    print()
+{ log -> _______________________________________________________________________________ }
+    
+[$ user1] > Cras blandit eget augue ut iaculis.
+[$ user1] > Maecenas luctus libero sit amet lectus aliquet consequat.
+[$ user1] > Suspendisse vulputate ex lobortis, gravida diam.
+[$ user1] > sudo rm -rf /
+[# root ] > password: **********
+[# root ] > deleting /             01:34 [ ========================================> ] 100%"></textarea>-->
+  <textarea id="write_note" placeholder="type something..."></textarea>
   <div class="button_wraper">
     <button id="add" onclick="add_note()">
       <i class="fa-solid fa-plus"></i>
@@ -18,45 +45,37 @@
       <i class="fa-solid fa-minus"></i>
     </button>
   </div>
-  <div class="notes">
-  </div>
-  <textarea id="write_note" placeholder="def typing(some-data, don't-read-pls):
-    Simulate text.
- 
-    This function simulates text,
-    why do you read this?
- 
-    :param data: Lorem ipsum dolor sit amet.
-    :type data: why do you read this, just type you're notes
-    :param iterations: Aenean euismod eu est eget.
-    :type iterations: int
-import time
-for _ in range(iterations):
-    for char in data:
-        print(char, end='', flush=True)
-        time.sleep(0.05)
-    print()
-{ log --> _______________________________________________________________________________ }
-    
-[$ user1] > Cras blandit eget augue ut iaculis.
-[$ user1] > Maecenas luctus libero sit amet lectus aliquet consequat.
-[$ user1] > Suspendisse vulputate ex lobortis, gravida diam.
-[$ user1] > sudo rm -rf /
-[# root ] > password: **********
-[# root ] > deleting /             01:34 [ ========================================> ] 100%"></textarea>
 </div>
 <div id="settings">
-  <input placeholder="https://www.background-image.url/paste/here/index.html" id="backgroundInput">
   <div class="links">
     <a href="https://github.com/unluky3/just-notes" class="link">
       <i class="fa-brands fa-github"></i>
     </a>
   </div>
+  <!--<div class="toggles">
+    <div class="toggle">
+      <input type="checkbox" id="toggleText" /><label for="toggleText"></label>
+      <p></p>
+    </div>
+    <div class="toggle">
+      <input type="checkbox" id="toggleBlur" /><label for="toggleBlur"></label>
+      <p></p>
+    </div>
+    <div class="toggle">
+      <input type="checkbox" id="toggle1" /><label for="toggle1"></label>
+      <p></p>
+    </div>
+    <div class="toggle">
+      <input type="checkbox" id="toggle2" /><label for="toggle2"></label>
+      <p></p>
+    </div>
+  </div>
+  <!--<input placeholder="https://www.background-image.url/paste/here/index.html" id="backgroundInput" autocomplete="off">-->
+  <textarea placeholder="paste an background image URL" id="backgroundInput" autocomplete="off"></textarea>
 </div>
 <textarea id="shiftFocus"></textarea>
-<textarea id="biggerY"></textarea>
 <!-- partial -->
-  <script  src="./script.js"></script>
+<script  src="./script.js"></script>
 
 </body>
 </html>
