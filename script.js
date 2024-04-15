@@ -53,18 +53,23 @@ function isValidURL(url) {
 }
 // ^^^^^^ background changer ^^^^^^ //
 
-//  !\/!\/!\/ add or remove notes \/!\/!\/!  \\
+// add or remove notes\\
 
-const add_note = () => {
+const add_note = (noteContent) => {
+  
   const notes = document.querySelector(".notes");
   var lastNote = notes.lastElementChild;
 
   var noteText = document.createElement("p");
-  var noteVisuals = document.createElement("div");
-  noteVisuals.classList.add("note");
+  var noteContainer = document.createElement("div");
+  noteContainer.classList.add("note");
 
   const textArea = document.getElementById("write_note");
   var textAreaContent = textArea.value;
+
+  if (noteContent) {
+    textAreaContent = noteContent;
+  };
 
   if (textAreaContent.trim() === "") {
     textArea.focus();
@@ -76,7 +81,7 @@ const add_note = () => {
   // Creating delete button
   const deleteButton = document.createElement("button");
   deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
-  deleteButton.classList.add("note_buttons_delete");
+  deleteButton.classList.add("noteButtonsDelete");
   deleteButton.addEventListener("click", () => {
     const noteElement = deleteButton.parentNode;
     noteElement.remove();
@@ -85,7 +90,7 @@ const add_note = () => {
   // Creating edit button
   const editButton = document.createElement("button");
   editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
-  editButton.classList.add("note_buttons_edit");
+  editButton.classList.add("noteButtonsEdit");
   editButton.addEventListener("click", () => {
     const noteElement = editButton.parentNode;
     const noteText = noteElement.querySelector("p");
@@ -96,10 +101,10 @@ const add_note = () => {
     noteElement.remove();
   });
 
-  notes.appendChild(noteVisuals);
-  noteVisuals.appendChild(noteText);
-  noteVisuals.appendChild(deleteButton);
-  noteVisuals.appendChild(editButton);
+  notes.appendChild(noteContainer);
+  noteContainer.appendChild(noteText);
+  noteContainer.appendChild(deleteButton);
+  noteContainer.appendChild(editButton);
 
   textArea.value = "";
 
@@ -119,6 +124,39 @@ const delete_note = () => {
 
   notes.removeChild(lastNote);
 };
+
+const noteChangeListener = () => {
+
+  const notes = document.querySelector(".notes");
+  let childCountBuffer = notes.childElementCount;
+
+  setInterval(() => {
+    if (childCountBuffer !== notes.childElementCount) {
+      childCountBuffer = notes.childElementCount;
+      console.log('noteChange');
+      saveNotes();
+    }
+  }, 0);
+
+};
+
+const saveNotes = () => {
+
+  const notes = document.querySelectorAll('.notes .note p');
+  let noteTexts = Array.from(notes).map(note => note.textContent);
+  noteTexts = noteTexts;
+
+  localStorage.setItem('notes', JSON.stringify(noteTexts));
+}
+
+const loadNotes = () => {
+
+  const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
+
+  for (let counter = 0; counter <= savedNotes.length - 1; counter++) {
+    add_note(savedNotes[counter]);
+  };
+}
 
 document
   .getElementById("write_note")
@@ -176,13 +214,19 @@ document
     }
 });
 
-document.getElementById("write_note").focus();
 
 const onLoad = () => {
+ 
   if (backgroundImageStored != baseImage) {
    document.getElementById("backgroundInput").value = backgroundImageStored;
   };
+ 
   root.style.backgroundImage = `url(${backgroundImageStored})`;
-}
-
-setInterval(console.log("вчителька з інформатики дурна"),1000);
+ 
+  noteChangeListener();
+  loadNotes();
+ 
+  if (JSON.parse(localStorage.getItem('notes')) && JSON.parse(localStorage.getItem('notes')).length === 0) {
+    document.getElementById("write_note").focus();
+  };
+};
