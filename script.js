@@ -214,11 +214,37 @@ document
     }
 });
 
+const textInputPlaceholder = `def typing(some-data, don't-read-pls):
+  Simulate text.
+  
+  This function simulates text,
+  why do you read this?
+  
+  :param data: Lorem ipsum dolor sit amet.
+  :type data: why do you read this, just type you're notes
+  :param iterations: Aenean euismod eu est eget.
+    :type iterations: int
+import time
+for _ in range(iterations):
+    for char in data:
+        print(char, end='', flush=True)
+        time.sleep(0.05)
+    print()
+{ log -> _______________________________________________________________________________ }
+    
+[$ user1] > Cras blandit eget augue ut iaculis.
+[$ user1] > Maecenas luctus libero sit amet lectus aliquet consequat.
+[$ user1] > Suspendisse vulputate ex lobortis, gravida diam.
+[$ user1] > sudo rm -rf /
+[# root ] > password: **********
+[# root ] > deleting /             01:34 [ ========================================> ] 100%`;
 
-const onLoad = () => {
+const backgroundInputPlaceholder = `https://www.background-image.url/paste/here/index.html`;
+
+const __init__ = () => {
  
   if (backgroundImageStored != baseImage) {
-   document.getElementById("backgroundInput").value = backgroundImageStored;
+    document.getElementById("backgroundInput").value = backgroundImageStored;
   };
  
   root.style.backgroundImage = `url(${backgroundImageStored})`;
@@ -229,4 +255,18 @@ const onLoad = () => {
   if (JSON.parse(localStorage.getItem('notes')) && JSON.parse(localStorage.getItem('notes')).length === 0) {
     document.getElementById("write_note").focus();
   };
+
+  const isFirstVisit = () => {
+    return localStorage.getItem('visited') === null;
+  }
+
+  const onFirstVisit = () => {
+    localStorage.setItem('visited', true);
+  };
+  if (isFirstVisit()) { onFirstVisit() } else { 
+    document.getElementById("write_note").placeholder = textInputPlaceholder;
+    document.getElementById("backgroundInput").placeholder = backgroundInputPlaceholder; 
+  }
 };
+
+window.onload = __init__ ;
