@@ -237,7 +237,7 @@ button {
   color:#d9e0ee8a;
   scale:1.55;
   position:absolute;
-  transform:translate(-185%,-165%)
+  transform:translate(-180%,-165%)
 }
 .note_buttons_edit:hover{
   color:#d9e0ee;
