@@ -19,18 +19,22 @@ const baseImage = 'https://images.unsplash.com/photo-1597747729747-0828f54b0b79'
 var backgroundImageStored = localStorage.getItem('backgroundStored');
 
 if (backgroundImageStored == null || backgroundImageStored == "") {
-  localStorage.setItem('backgroundStored',baseImage);
-  console.log('background not found. base image is used');
-};
+  // Set default background image URL in localStorage
+  localStorage.setItem('backgroundStored', baseImage);
+  // Set backgroundImageStored variable to the default image URL
+  backgroundImageStored = baseImage;
+  // Apply default background image to the root element
+  root.style.backgroundImage = `url(${baseImage})`;
+  console.log('Background not found. Base image is used: ' + baseImage);
+}
 
-// ^^^^^^ save background image in local storage ^^^^^^ //
 
 document
   .getElementById("backgroundInput")
   .addEventListener("input", function () {
     var backgroundImageURL = this.value;
     if (backgroundImageURL.trim() === "" || !isValidURL(backgroundImageURL)) {
-      localStorage.setItem('backgroundStored','https://images.unsplash.com/photo-1597747729747-0828f54b0b79');      
+      localStorage.setItem('backgroundStored',baseImage);      
     } else {
       localStorage.setItem('backgroundStored', backgroundImageURL); 
     };
