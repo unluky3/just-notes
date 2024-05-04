@@ -231,13 +231,13 @@ button {
   color:#d9e0ee8a;
   scale:1.55;
   position:absolute;
-  transform:translate(-145%,-15%)
+  transform:translate(-195%,-15%)
 }
 .noteButtonsEdit{
   color:#d9e0ee8a;
   scale:1.55;
   position:absolute;
-  transform:translate(-135%,-165%)
+  transform:translate(-180%,-165%)
 }
 .note_buttons_edit:hover{
   color:#d9e0ee;
