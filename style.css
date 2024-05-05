@@ -1,33 +1,44 @@
+.notes {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(50, 50, 50, 0.5) transparent;
+}
+
+.notes::-webkit-scrollbar {
+  display: none;
+}
+
+#write_note::placeholder,
+#backgroundInput::placeholder {
+  color: #aaaaaa8a;
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
+
 ::-moz-placeholder {
   color: #aaaaaa8a;
 }
+
 :-ms-input-placeholder {
   color: #aaaaaa8a;
 }
+
 ::placeholder {
   color: #aaaaaa8a;
 }
-.notes::-webkit-scrollbar {
-  width: 8px;
-  background-color: transparent;
-  opacity: 1;
-}
-.notes::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-.notes::-webkit-scrollbar-thumb {
-  background-color: rgba(50, 50, 50, 0.5);
-  border-radius: 5px;
-}
+
 textarea::-webkit-scrollbar {
   display: none;
 }
+
 i {
-  color:#d9e0ee;
+  color: #d9e0ee;
 }
+
+/* Remaining CSS Rules */
+/* Add your remaining CSS rules here */
+
 :root {
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
@@ -39,9 +50,11 @@ i {
   background-size: cover;
   background-position: center;
 }
+
 textarea {
   resize: none;
 }
+
 body {
   display: flex;
   align-items: center;
@@ -51,6 +64,7 @@ body {
   padding: 0p;
   overflow-x: hidden;
 }
+
 .button_wraper {
   position: fixed;
   align-self: flex-end;
@@ -59,11 +73,13 @@ body {
   justify-content: space-around;
   margin-right: 5%;
 }
-@media (min-width:1071px) {
-  .button_wraper{
+
+@media (min-width: 1071px) {
+  .button_wraper {
     height: 90%;
   }
 }
+
 .main_window {
   margin-top: 5%;
   padding: 0%;
@@ -78,6 +94,7 @@ body {
   width: 75%;
   flex-direction: column;
 }
+
 button {
   border-radius: 0%;
   aspect-ratio: 1;
@@ -86,6 +103,7 @@ button {
   transition: 0.2s;
   background-color: transparent;
 }
+
 .button_wraper > button {
   border-radius: 50%;
   aspect-ratio: 1;
@@ -94,12 +112,15 @@ button {
   transition: 0.2s;
   background-color: transparent;
 }
+
 .button_wraper > button:hover {
   scale: 2.5;
 }
+
 .button_wraper > button:active {
   scale: 1.9;
 }
+
 #write_note {
   overflow-x: hidden;
   overflow: hidden;
@@ -118,10 +139,12 @@ button {
   transition-duration: 0.4s;
   transition-delay: 0.1s;
 }
+
 #write_note:hover {
   aspect-ratio: 7.5/1;
   width: 35%;
 }
+
 #write_note:focus{
   opacity: 1;
   padding: 25px;
@@ -137,8 +160,9 @@ button {
   --opacity: 0;
   transition-delay: none;
 }
+
 .note {
-  overflow-wrap:break-word;
+  overflow-wrap: break-word;
   font-size: 100%;
   margin-bottom: 1%;
   color: #e0dfd5;
@@ -151,6 +175,7 @@ button {
   height: auto;
   width: 90%;
 }
+
 .notes {
   background-color: rgba(255, 255, 255, 0);
   position: absolute;
@@ -168,6 +193,7 @@ button {
   overflow-x: hidden;
   transition: opacity 0.4s; /* Add transition for opacity */
 }
+
 #settings {
   padding: 0px;
   padding-top: 2.5%;
@@ -179,13 +205,14 @@ button {
   align-items: center;
   justify-content: center;
   -webkit-backdrop-filter: blur(25px);
-          backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
   background-color: rgba(20, 20, 20, 0.35);
   aspect-ratio: 5/1;
   width: 75%;
   margin-top: 7.5%;
   margin-bottom: 2.5%;
 }
+
 #settings > textarea {
   font-family: "Roboto Mono", monospace;
   overflow-x: hidden;
@@ -203,6 +230,7 @@ button {
   padding: 15px;
   width: 75%;
 }
+
 .links {
   display: flex;
   flex-direction: row;
@@ -212,76 +240,95 @@ button {
   width: 75%;
   margin-bottom: 5%;
 }
+
 .links > .link {
   transition-duration: 0.25s;
   scale: 1.75;
   color: #d9e0ee;
   text-decoration: none;
 }
+
 .links > .link:hover {
   scale: 2;
 }
+
 #shiftFocus {
   opacity: 0;
   position: absolute;
   z-index: -1000;
   pointer-events: none;
 }
+
 .noteButtonsDelete{
-  color:#d9e0ee8a;
-  scale:1.55;
-  position:absolute;
-  transform:translate(-195%,-15%)
+  color: #d9e0ee8a;
+  scale: 1.55;
+  position: absolute;
+  transform: translate(-195%, -15%);
 }
+
 .noteButtonsEdit{
-  color:#d9e0ee8a;
-  scale:1.55;
-  position:absolute;
-  transform:translate(-180%,-165%)
+  color: #d9e0ee8a;
+  scale: 1.55;
+  position: absolute;
+  transform: translate(-180%, -165%);
 }
+
 .note_buttons_edit:hover{
-  color:#d9e0ee;
+  color: #d9e0ee;
 }
+
 .note_buttons_delete:hover{
-  color:#d9e0ee;
+  color: #d9e0ee;
 }
-@media (max-width: 1070px) {
-  .button_wraper{
-    justify-content: space-around;
-    height:100%;
+
+@media (min-width: 1071px) {
+  .button_wraper {
+    height: 90%;
   }
-  body{
+}
+
+@media (max-width: 1070px) {
+  .button_wraper {
+    justify-content: space-around;
+    height: 100%;
+  }
+  body {
     display: flex;
   }
-  .main_window{
-    width:90%;
+  .main_window {
+    width: 90%;
   }
   #settings {
     margin-top: 7.5%;
     margin-bottom: 5%;
   }
 }
-@media (max-width : 1000px) {
-  #settings{
+
+@media (max-width: 1000px) {
+  #settings {
     margin-top: 10%;
   }
 }
-@media (max-width : 940px) {
-  #settings{
+
+@media (max-width: 940px) {
+  #settings {
     margin-top: 17%;
   }
 }
-@media (max-width : 860px) {
-  #settings{
+
+@media (max-width: 860px) {
+  #settings {
     margin-top: 23%;
   }
 }
-@media (max-width : 816px) {
-  #settings{
+
+@media (max-width: 816px) {
+  #settings {
     margin-top: 23%;
   }
 }
-@media (max-width : 650px) {
+
+@media (max-width: 650px) {
   .note {
     word-wrap: break-word;
     font-size: 100%;
@@ -297,38 +344,40 @@ button {
     width: 60%;
   }
 }
+
 @media (max-width: 770px) {
-  .button_wraper{
+  .button_wraper {
     height: 100%;
     justify-content: space-around;
   }
-  .main_window{
+  .main_window {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     width: 100%;
     aspect-ratio: 1.5/1;
-    margin:0px;
+    margin: 0px;
     margin-top: 0px;
   }
   #settings {
     margin-top: 5%;
     margin-bottom: 0px;
   }
-  #write_note{
+  #write_note {
     margin-top: 50%;
   }
-  #write_note:focus{
+  #write_note:focus {
     aspect-ratio: 1.75/1;
-    width:75%;
+    width: 75%;
   }
 }
+
 @media (max-width: 425px) {
-  :root{
+  :root {
     background-size: 200%;
   }
 
-  .button_wraper{
-    margin:0px;
+  .button_wraper {
+    margin: 0px;
     margin-top: 130%;
     display: flex;
     flex-direction: row;
@@ -336,22 +385,22 @@ button {
     width: -webkit-fill-available;
     height: auto;
   }
-  #delete{
-    font-size:xx-large;
+  #delete {
+    font-size: xx-large;
     aspect-ratio: 1;
-    scale:0.6;
+    scale: 0.6;
   }
-  #add{
-    font-size:xx-large;
+  #add {
+    font-size: xx-large;
     aspect-ratio: 1;
-    scale:0.6;
+    scale: 0.6;
   }
-  .main_window{
+  .main_window {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     width: 100%;
     aspect-ratio: 1/1.5;
-    margin:0px;
+    margin: 0px;
     margin-top: 0px;
   }
   #settings {
@@ -362,73 +411,74 @@ button {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
   }
-  .links{
+  .links {
     margin-top: 2.5%;
-    width:70%;
+    width: 70%;
   }
-  .links > .link{
+  .links > .link {
     scale: 1.5;
   }
-  .links > .link:hover{
-    scale:1.7;
+  .links > .link:hover {
+    scale: 1.7;
   }
-  #settings > input{
+  #settings > input {
     aspect-ratio: none;
     height: 5%;
     margin-bottom: 2.5%;
   }
-  #write_note{
+  #write_note {
     aspect-ratio: 20/1;
-    width:70%;
+    width: 70%;
     margin-top: 100%;
   }
-  #write_note:hover{
-    width:72.5%;
+  #write_note:hover {
+    width: 72.5%;
   }
-  #write_note:focus{
+  #write_note:focus {
     aspect-ratio: 1/1.5;
-    width:75%;
+    width: 75%;
     margin: 0%;
     margin-top: 5%;
     margin-bottom: 19%;
   }
-  .notes{
-    width:100%;
+  .notes {
+    width: 100%;
     margin-bottom: 40%;
   }
-  .note{
+  .note {
     margin-left: 12.5%;
-    width:70%;
+    width: 70%;
   }
 }
+
 @media (max-width: 320px) {
-  :root{
+  :root {
     background-size: 300%;
   }
-  .button_wraper{
-    margin:0px;
+  .button_wraper {
+    margin: 0px;
     margin-top: 175%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     aspect-ratio: 2/1;
   }
-  #delete{
-    font-size:xx-large;
+  #delete {
+    font-size: xx-large;
     aspect-ratio: 1;
-    scale:0.6;
+    scale: 0.6;
   }
-  #add{
-    font-size:xx-large;
+  #add {
+    font-size: xx-large;
     aspect-ratio: 1;
-    scale:0.6;
+    scale: 0.6;
   }
-  .main_window{
+  .main_window {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     width: 100%;
     aspect-ratio: 1/2;
-    margin:0px;
+    margin: 0px;
     margin-top: 0px;
   }
   #settings {
@@ -439,41 +489,41 @@ button {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
   }
-  .links{
+  .links {
     margin-top: 2.5%;
-    width:50%;
+    width: 50%;
   }
-  .links > .link{
+  .links > .link {
     scale: 1.5;
   }
-  .links > .link:hover{
-    scale:1.7;
+  .links > .link:hover {
+    scale: 1.7;
   }
-  #settings > input{
+  #settings > input {
     aspect-ratio: none;
     height: 5%;
     margin-bottom: 2.5%;
   }
-  #write_note{
+  #write_note {
     aspect-ratio: 20/1;
-    width:70%;
+    width: 70%;
     margin-top: 130%;
   }
-  #write_note:hover{
-    width:72.5%;
+  #write_note:hover {
+    width: 72.5%;
   }
-  #write_note:focus{
+  #write_note:focus {
     aspect-ratio: 1/1.9;
-    width:75%;
+    width: 75%;
     margin: 0%;
     margin-bottom: 25%;
   }
-  .notes{
-    width:100%;
+  .notes {
+    width: 100%;
     margin-bottom: 100%;
   }
-  .note{
+  .note {
     margin-left: 12.5%;
-    width:75%;
+    width: 75%;
   }
 }
