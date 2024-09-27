@@ -225,7 +225,7 @@ const textInputPlaceholder = `def typing(some-data, don't-read-pls):
   why do you read this?
   
   :param data: Lorem ipsum dolor sit amet.
-  :type data: why do you read this, just type you're notes
+  :type data: why do you read this, just type your notes
   :param iterations: Aenean euismod eu est eget.
     :type iterations: int
 import time
